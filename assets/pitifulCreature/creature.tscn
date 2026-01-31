@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bn4mwq4t7rnim"]
+
+[ext_resource type="Texture2D" uid="uid://dgpuc08xkyp01" path="res://assets/pitifulCreature/Stage1_walk.png" id="1_qtwcw"]
+[ext_resource type="Script" uid="uid://doxajvogep7n6" path="res://main_player.gd" id="2_h7l1l"]
+
+[sub_resource type="Animation" id="Animation_beq0j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nauge"]
+resource_name = "player_walk"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ycv2e"]
+_data = {
+&"RESET": SubResource("Animation_beq0j"),
+&"player_walk": SubResource("Animation_nauge")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=737628181]
+scale = Vector2(4, 4)
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=811666763]
+position = Vector2(-214.5, 75.875)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_qtwcw")
+hframes = 2
+script = ExtResource("2_h7l1l")
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSprite" unique_id=170294058]
+position = Vector2(229, -120)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite" unique_id=609113224]
+libraries/ = SubResource("AnimationLibrary_ycv2e")

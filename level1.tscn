@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://hpv81bfxu0hq"]
 
-[ext_resource type="Script" uid="uid://doxajvogep7n6" path="res://main_player.gd" id="1_jwv3a"]
 [ext_resource type="Texture2D" uid="uid://16xe0buv1a27" path="res://assets/level01/Ground.png" id="1_ootpb"]
 [ext_resource type="Script" uid="uid://byjc2tlor8rnn" path="res://level_1.gd" id="1_v8kj3"]
 [ext_resource type="PackedScene" uid="uid://by716xgegvvog" path="res://assets/hud/hud.tscn" id="1_v38iq"]
@@ -9,45 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://la5q0mujgpe2" path="res://assets/level01/Sky.png" id="3_i2041"]
 [ext_resource type="Texture2D" uid="uid://vfkslypelumr" path="res://assets/level01/BackgroundDunesFurther.png" id="4_xy4tn"]
 [ext_resource type="Texture2D" uid="uid://g5tl8wy6l156" path="res://assets/level01/Ruins_BehindDunesPassthrough.png" id="6_1idop"]
-[ext_resource type="Texture2D" uid="uid://dgpuc08xkyp01" path="res://assets/pitifulCreature/Stage1_walk.png" id="8_1idop"]
-
-[sub_resource type="Animation" id="Animation_beq0j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_nauge"]
-resource_name = "player_walk"
-length = 0.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ycv2e"]
-_data = {
-&"RESET": SubResource("Animation_beq0j"),
-&"player_walk": SubResource("Animation_nauge")
-}
+[ext_resource type="PackedScene" uid="uid://bn4mwq4t7rnim" path="res://assets/pitifulCreature/creature.tscn" id="9_usj0q"]
 
 [node name="Level1" type="Node2D" unique_id=2086817603 node_paths=PackedStringArray("hud")]
 script = ExtResource("1_v8kj3")
@@ -92,19 +53,5 @@ position = Vector2(1010, -16)
 scale = Vector2(4, 4)
 texture = ExtResource("1_ootpb")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1316296824]
+[node name="Player" parent="." unique_id=737628181 instance=ExtResource("9_usj0q")]
 position = Vector2(1007, -17.5)
-scale = Vector2(4, 4)
-
-[node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=436859836]
-position = Vector2(-214.5, 75.875)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_1idop")
-hframes = 2
-script = ExtResource("1_jwv3a")
-
-[node name="Camera2D" type="Camera2D" parent="Player/PlayerSprite" unique_id=1931360144]
-position = Vector2(229, -120)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/PlayerSprite" unique_id=948802834]
-libraries/ = SubResource("AnimationLibrary_ycv2e")

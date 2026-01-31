@@ -1,13 +1,22 @@
 [gd_scene format=3 uid="uid://by716xgegvvog"]
 
 [ext_resource type="Script" uid="uid://0svmis2lhlmp" path="res://assets/hud/hud.gd" id="1_ndvix"]
-[ext_resource type="Texture2D" uid="uid://bjjwrtw74y6hv" path="res://assets/masks/Masks0.png" id="2_g1w06"]
-[ext_resource type="Texture2D" uid="uid://baw3hau3sqo55" path="res://assets/masks/Masks3.png" id="5_g1w06"]
-[ext_resource type="Texture2D" uid="uid://deoqrr8pbgh0v" path="res://assets/masks/Masks2.png" id="5_ndvix"]
+[ext_resource type="Texture2D" uid="uid://bo1m1rp26iqab" path="res://assets/masks/MasksAnimation 1.png" id="3_ndvix"]
+[ext_resource type="Texture2D" uid="uid://lb330vfky7xj" path="res://assets/masks/MasksAnimation 2.png" id="4_ndvix"]
+[ext_resource type="Texture2D" uid="uid://bcgjerxbuyp2l" path="res://assets/hud/HUDBg_TopLeft.png" id="5_41ool"]
+[ext_resource type="Texture2D" uid="uid://byd8unpnnlbc8" path="res://assets/masks/MasksAnimation 3.png" id="5_g1w06"]
+[ext_resource type="Texture2D" uid="uid://bqu0p3kltwgf8" path="res://assets/masks/MasksAnimation 4.png" id="6_g1w06"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1277068767 node_paths=PackedStringArray("mask_container")]
 script = ExtResource("1_ndvix")
 mask_container = NodePath("MarginContainer/HBoxMaskContainer")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1670712684]
+offset_right = 1142.0
+offset_bottom = 655.0
+texture = ExtResource("5_41ool")
+expand_mode = 2
+stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=411213128]
 anchors_preset = -1
@@ -28,7 +37,7 @@ layout_mode = 2
 
 [node name="MaskNone" type="TextureRect" parent="MarginContainer/HBoxMaskContainer" unique_id=2023343834]
 layout_mode = 2
-texture = ExtResource("2_g1w06")
+texture = ExtResource("3_ndvix")
 expand_mode = 2
 stretch_mode = 4
 metadata/mask_idx = 0
@@ -36,7 +45,7 @@ metadata/mask_idx = 0
 [node name="MaskWhite" type="TextureRect" parent="MarginContainer/HBoxMaskContainer" unique_id=767984273]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_ndvix")
+texture = ExtResource("4_ndvix")
 expand_mode = 2
 stretch_mode = 4
 metadata/mask_idx = 1
@@ -48,3 +57,11 @@ texture = ExtResource("5_g1w06")
 expand_mode = 2
 stretch_mode = 4
 metadata/mask_idx = 2
+
+[node name="MaskRed" type="TextureRect" parent="MarginContainer/HBoxMaskContainer" unique_id=1382256951]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_g1w06")
+expand_mode = 2
+stretch_mode = 4
+metadata/mask_idx = 3

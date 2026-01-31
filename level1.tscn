@@ -18,6 +18,7 @@ hud = NodePath("Hud")
 [node name="Hud" parent="." unique_id=1277068767 instance=ExtResource("1_v38iq")]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=579429006]
+position = Vector2(0, -50)
 
 [node name="Far" type="Parallax2D" parent="Node2D" unique_id=660153268]
 scroll_scale = Vector2(0, 1)
@@ -43,16 +44,17 @@ texture = ExtResource("2_crycw")
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="RuinsBehindDunesPassthrough" type="Sprite2D" parent="." unique_id=1500589098]
-position = Vector2(1000, 0)
+position = Vector2(1000, -50)
 scale = Vector2(4, 4)
 texture = ExtResource("6_1idop")
 
 [node name="Dunes" type="Sprite2D" parent="." unique_id=1320982546]
-position = Vector2(1000, 0)
+position = Vector2(1000, -50)
 scale = Vector2(4, 4)
 texture = ExtResource("1_ootpb")
 
 [node name="BuildingNode" type="Node2D" parent="." unique_id=1840637102]
+position = Vector2(0, -50)
 
 [node name="Buildings" parent="BuildingNode" unique_id=1666850886 instance=ExtResource("3_5j5gb")]
 

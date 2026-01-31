@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bn4mwq4t7rnim"]
 
-[ext_resource type="Script" uid="uid://33u84wkmuljv" path="res://assets/pitifulCreature/creature.gd" id="1_h7l1l"]
+[ext_resource type="Script" path="res://assets/pitifulCreature/creature.gd" id="1_h7l1l"]
 [ext_resource type="Texture2D" uid="uid://dgpuc08xkyp01" path="res://assets/pitifulCreature/Stage1_walk.png" id="1_qtwcw"]
 
 [sub_resource type="Animation" id="Animation_beq0j"]
@@ -23,7 +23,6 @@ resource_name = "player_idle"
 
 [sub_resource type="Animation" id="Animation_nauge"]
 resource_name = "player_walk"
-length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -32,10 +31,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.23333333, 0.43333334, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ycv2e"]
@@ -58,7 +57,7 @@ animationPlayer = NodePath("PlayerSprite/AnimationPlayer")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_qtwcw")
 offset = Vector2(4, -30)
-hframes = 2
+hframes = 4
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSprite" unique_id=170294058]
 limit_left = 0

@@ -42,10 +42,6 @@ texture = ExtResource("2_crycw")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Node2D/Mid" unique_id=1569497853]
 motion_scale = Vector2(0.5, 0.5)
 
-[node name="BuildingNode" type="Node2D" parent="." unique_id=1840637102]
-
-[node name="Buildings" parent="BuildingNode" unique_id=1666850886 instance=ExtResource("3_5j5gb")]
-
 [node name="RuinsBehindDunesPassthrough" type="Sprite2D" parent="." unique_id=1500589098]
 position = Vector2(1000, 0)
 scale = Vector2(4, 4)
@@ -55,6 +51,10 @@ texture = ExtResource("6_1idop")
 position = Vector2(1000, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("1_ootpb")
+
+[node name="BuildingNode" type="Node2D" parent="." unique_id=1840637102]
+
+[node name="Buildings" parent="BuildingNode" unique_id=1666850886 instance=ExtResource("3_5j5gb")]
 
 [node name="Player" parent="." unique_id=737628181 instance=ExtResource("9_usj0q")]
 position = Vector2(1007, -17.5)

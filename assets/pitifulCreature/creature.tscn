@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://33u84wkmuljv" path="res://assets/pitifulCreature/creature.gd" id="1_h7l1l"]
 [ext_resource type="Texture2D" uid="uid://dgpuc08xkyp01" path="res://assets/pitifulCreature/Stage1_walk.png" id="1_qtwcw"]
+[ext_resource type="Texture2D" uid="uid://c1rpdne5cvqii" path="res://assets/pitifulCreature/Stage2_white.png" id="3_h7l1l"]
+[ext_resource type="Texture2D" uid="uid://rv8mhp8vcnvc" path="res://assets/pitifulCreature/Stage3_blue.png" id="4_xfp1t"]
 
 [sub_resource type="Animation" id="Animation_beq0j"]
 length = 0.001
@@ -38,21 +40,64 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_xfp1t"]
+resource_name = "player_white_walk"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ycv2e"]
 _data = {
 &"RESET": SubResource("Animation_beq0j"),
 &"player_idle": SubResource("Animation_qtwcw"),
-&"player_walk": SubResource("Animation_nauge")
+&"player_walk": SubResource("Animation_nauge"),
+&"player_white_walk": SubResource("Animation_xfp1t")
+}
+
+[sub_resource type="Animation" id="Animation_h7l1l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_m4u8d"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_x6wvn"]
+resource_name = "walk"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.26666668, 0.46666667, 0.73333335, 1.0333333, 1.2666667, 1.5666667, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 3, 4, 5, 6, 7, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1sajw"]
+_data = {
+&"RESET": SubResource("Animation_h7l1l"),
+&"idle": SubResource("Animation_m4u8d"),
+&"walk": SubResource("Animation_x6wvn")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwcw"]
 size = Vector2(13.25, 9.5)
 
-[node name="Player" type="CharacterBody2D" unique_id=737628181 node_paths=PackedStringArray("sprite", "animationPlayer")]
+[node name="Player" type="CharacterBody2D" unique_id=737628181]
 scale = Vector2(4, 4)
 script = ExtResource("1_h7l1l")
-sprite = NodePath("PlayerSprite")
-animationPlayer = NodePath("PlayerSprite/AnimationPlayer")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=811666763]
 scale = Vector2(0.5, 0.5)
@@ -69,6 +114,26 @@ limit_smoothed = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite" unique_id=609113224]
 libraries/ = SubResource("AnimationLibrary_ycv2e")
 autoplay = &"player_idle"
+
+[node name="PlayerSprite2" type="Sprite2D" parent="." unique_id=468632623]
+position = Vector2(0, -23.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h7l1l")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite2" unique_id=923068142]
+libraries/ = SubResource("AnimationLibrary_1sajw")
+autoplay = &"idle"
+
+[node name="PlayerSprite3" type="Sprite2D" parent="." unique_id=1900962532]
+position = Vector2(2.75, -17.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_xfp1t")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite3" unique_id=235654736]
+libraries/ = SubResource("AnimationLibrary_1sajw")
+autoplay = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832895403]
 position = Vector2(-1.375, -14.75)

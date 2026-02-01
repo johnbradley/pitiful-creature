@@ -1,11 +1,39 @@
 extends CharacterBody2D
 
-@export var sprite:Sprite2D
-@export var animationPlayer:AnimationPlayer
+var sprite:Sprite2D
+var animationPlayer:AnimationPlayer
+var sprite2:Sprite2D
+var animationPlayer2:AnimationPlayer
+var sprite3:Sprite2D
+var animationPlayer3:AnimationPlayer
+
+#@export var animationPlayer:AnimationPlayer
+#@export var animationPlayer2:AnimationPlayer
 
 func _ready() -> void:
+	GameManager.inventory_changed.connect(_on_inventory_changed)
+
+	sprite = $PlayerSprite
+	sprite2 = $PlayerSprite2
+	sprite3 = $PlayerSprite3
+	animationPlayer = $PlayerSprite/AnimationPlayer
+	animationPlayer2 = $PlayerSprite2/AnimationPlayer
+	animationPlayer3 = $PlayerSprite3/AnimationPlayer
+
 	animationPlayer.play("player_idle")
-	pass
+	animationPlayer2.play("idle")
+	animationPlayer3.play("idle")
+
+	show_visible_player_version()
+	
+
+func _on_inventory_changed(mask_id) -> void:
+	show_visible_player_version()
+
+func show_visible_player_version():
+	sprite.visible = GameManager.current_mask_name == GameManager.NO_MASK
+	sprite2.visible = GameManager.current_mask_name == GameManager.MASK_DAPPER
+	sprite3.visible = GameManager.current_mask_name == GameManager.MASK_2
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,16 +51,24 @@ func _physics_process(delta: float) -> void:
 		# Player started moving horizontally
 		velocity.x = direction * GameManager.playerStats["speed"]
 		animationPlayer.play("player_walk")
+		animationPlayer2.play("walk")
+		animationPlayer3.play("walk")
 		
 		# Figure out which direction the sprite should face
 		if velocity.x < 0.0:
 			sprite.flip_h = true
+			sprite2.flip_h = true
+			sprite3.flip_h = true
 		
 		if velocity.x > 0.0:
 			sprite.flip_h = false
+			sprite2.flip_h = false
+			sprite3.flip_h = false
 	else:
 		# Player has stopped moving horizontally
 		velocity.x = move_toward(velocity.x, 0, GameManager.playerStats["speed"])
 		animationPlayer.play("player_idle")
+		animationPlayer2.play("idle")
+		animationPlayer3.play("idle")
 	
 	move_and_slide()

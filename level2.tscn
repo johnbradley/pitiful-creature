@@ -20,7 +20,7 @@ scale = Vector2(4, 4)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground plane/StaticBody2D" unique_id=789952604]
 position = Vector2(-156, 25)
-polygon = PackedVector2Array(184.5, 47.75, 182.5, -46.25, 205, 89.75, -315, 77.75, -304.5, -8.75, -289, 58.75, 152.5, 64.25)
+polygon = PackedVector2Array(184.5, 47.75, 182.5, -46.25, 205, 89.75, -315, 77.75, -304.5, -8.75, -289, 58.75, 152.5, 60.5)
 
 [node name="Level2Landscape" parent="." unique_id=1666850886 instance=ExtResource("7_3opl0")]
 position = Vector2(-842, -240)

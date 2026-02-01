@@ -52,25 +52,6 @@ position = Vector2(998, 326)
 scale = Vector2(4, 4)
 texture = ExtResource("8_8217x")
 
-[node name="Green Mask" type="Node2D" parent="." unique_id=814151429]
-position = Vector2(5030, 250)
-scale = Vector2(16, 16)
-
-[node name="GreenMask" type="Sprite2D" parent="Green Mask" unique_id=275729506]
-position = Vector2(-252, 4.75)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("9_i1aok")
-
-[node name="Area2D" type="Area2D" parent="Green Mask/GreenMask" unique_id=1433717807]
-position = Vector2(-963, -102)
-scale = Vector2(4, 4)
-script = ExtResource("8_ymur7")
-
-[node name="GreenMaskCollision" type="CollisionPolygon2D" parent="Green Mask/GreenMask/Area2D" unique_id=546301973]
-position = Vector2(161.9375, 14.625)
-scale = Vector2(0.29262602, 0.25855666)
-polygon = PackedVector2Array(183.0408, 43.752502, 180.90497, 47.861847, 183.2544, 55.35537, 187.31247, 55.113647, 190.08905, 50.03739, 188.38039, 43.994225)
-
 [node name="RightPortalIlluminationCopy" type="Sprite2D" parent="." unique_id=939613270]
 position = Vector2(998, 326)
 scale = Vector2(4, 4)
@@ -183,3 +164,22 @@ texture = ExtResource("18_71r8q")
 position = Vector2(1003, 3)
 scale = Vector2(4, 4)
 polygon = PackedVector2Array(148.75, 104.5, 129.5, 88.25, 159.75, 90, 198.5, 106.5, 193.75, 112.5)
+
+[node name="Green Mask" type="Node2D" parent="." unique_id=814151429]
+position = Vector2(5030, 250)
+scale = Vector2(16, 16)
+
+[node name="GreenMask" type="Sprite2D" parent="Green Mask" unique_id=275729506]
+position = Vector2(-252, 4.75)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_i1aok")
+
+[node name="Area2D" type="Area2D" parent="Green Mask/GreenMask" unique_id=1433717807]
+position = Vector2(-963, -102)
+scale = Vector2(4, 4)
+script = ExtResource("8_ymur7")
+
+[node name="GreenMaskCollision" type="CollisionPolygon2D" parent="Green Mask/GreenMask/Area2D" unique_id=546301973]
+position = Vector2(161.9375, 14.625)
+scale = Vector2(0.29262602, 0.25855666)
+polygon = PackedVector2Array(183.0408, 43.752502, 180.90497, 47.861847, 183.2544, 55.35537, 187.31247, 55.113647, 190.08905, 50.03739, 188.38039, 43.994225)

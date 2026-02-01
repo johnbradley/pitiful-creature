@@ -19,7 +19,6 @@ func _ready() -> void:
 	label = $Label
 
 func _on_inventory_changed(mask_id) -> void:
-	print("inventry change")
 	# If it was a mask, update the mask UI
 	update_mask_ui()
 

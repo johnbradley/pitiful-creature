@@ -19,7 +19,7 @@ const MASK_NAMES = [ NO_MASK, MASK_DAPPER, MASK_2, MASK_3, MASK_4 ]
 var playerStats = {
 	NO_MASK: {
 		"jump_velocity": -150.0,
-		"speed": 775.0,
+		"speed": 75.0,
 	},
 	# White Mask
 	MASK_DAPPER: {

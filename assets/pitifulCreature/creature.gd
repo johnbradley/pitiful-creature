@@ -71,22 +71,26 @@ func _physics_process(delta: float) -> void:
 		animationPlayer.play("player_walk")
 		animationPlayer2.play("walk")
 		animationPlayer3.play("walk")
+		animationPlayer4.play("walk")
 		
 		# Figure out which direction the sprite should face
 		if velocity.x < 0.0:
 			sprite.flip_h = true
 			sprite2.flip_h = true
 			sprite3.flip_h = true
+			sprite4.flip_h = true
 		
 		if velocity.x > 0.0:
 			sprite.flip_h = false
 			sprite2.flip_h = false
 			sprite3.flip_h = false
+			sprite4.flip_h = false
 	else:
 		# Player has stopped moving horizontally
 		velocity.x = move_toward(velocity.x, 0, GameManager.playerStats[GameManager.current_mask_name]["speed"])
 		animationPlayer.play("player_idle")
 		animationPlayer2.play("idle")
 		animationPlayer3.play("idle")
+		animationPlayer4.play("idle")
 	
 	move_and_slide()

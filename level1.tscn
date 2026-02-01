@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b86j854tmqov5" path="res://assets/level01/Mask_White.png" id="9_5j5gb"]
 [ext_resource type="PackedScene" uid="uid://bn4mwq4t7rnim" path="res://assets/pitifulCreature/creature.tscn" id="9_usj0q"]
 [ext_resource type="Script" uid="uid://due5c1b2f8uk2" path="res://white_mask.gd" id="10_5j5gb"]
+[ext_resource type="PackedScene" uid="uid://e3ksjig4c1p4" path="res://Clouds.tscn" id="11_mx85b"]
 
 [node name="Level1" type="Node2D" unique_id=2086817603 node_paths=PackedStringArray("hud")]
 texture_filter = 1
@@ -29,6 +30,21 @@ scroll_offset = Vector2(1000, 0)
 position = Vector2(0, 29)
 scale = Vector2(4, 4)
 texture = ExtResource("3_i2041")
+
+[node name="Clouds" parent="Background/Far" unique_id=1811358109 instance=ExtResource("11_mx85b")]
+position = Vector2(-1111, -35)
+
+[node name="Clouds2" parent="Background/Far" unique_id=1605203491 instance=ExtResource("11_mx85b")]
+position = Vector2(-219, -130)
+
+[node name="Clouds3" parent="Background/Far" unique_id=1932062385 instance=ExtResource("11_mx85b")]
+position = Vector2(276, -67)
+
+[node name="Clouds4" parent="Background/Far" unique_id=968038057 instance=ExtResource("11_mx85b")]
+position = Vector2(359, 97)
+
+[node name="Clouds5" parent="Background/Far" unique_id=1134704230 instance=ExtResource("11_mx85b")]
+position = Vector2(-1152, 59)
 
 [node name="Far Dunes" type="Sprite2D" parent="Background/Far" unique_id=1351675484]
 scale = Vector2(4, 4)

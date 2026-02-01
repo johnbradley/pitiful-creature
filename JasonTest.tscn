@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bc1dqq3sgf27b"]
+
+[ext_resource type="PackedScene" uid="uid://e3ksjig4c1p4" path="res://Clouds.tscn" id="1_bg53a"]
+
+[node name="JasonTest" type="Node2D" unique_id=361317706]
+
+[node name="Clouds" parent="." unique_id=1811358109 instance=ExtResource("1_bg53a")]
+position = Vector2(718, 405)
+
+[node name="Clouds2" parent="." unique_id=1284309206 instance=ExtResource("1_bg53a")]
+position = Vector2(814, 761)
+
+[node name="Clouds3" parent="." unique_id=539124925 instance=ExtResource("1_bg53a")]
+position = Vector2(838, 533)

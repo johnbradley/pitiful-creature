@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://e3ksjig4c1p4"]
+
+[ext_resource type="Texture2D" uid="uid://dsam27hir6qr" path="res://assets/level01/Clouds.png" id="1_tjf83"]
+[ext_resource type="Script" uid="uid://f7bphkna478p" path="res://clouds.gd" id="3_qog0v"]
+
+[node name="Clouds" type="Node2D" unique_id=1811358109]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2102580012]
+texture = ExtResource("1_tjf83")
+hframes = 4
+script = ExtResource("3_qog0v")

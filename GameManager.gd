@@ -18,6 +18,7 @@ const MASK_NAMES = [ NO_MASK, MASK_DAPPER, MASK_2, MASK_3, MASK_4 ]
 
 # Game state signals
 signal inventory_changed(item_name)
+signal player_in_group_changed()
 
 func _ready() -> void:
 	# print("Initializing GameManager")
@@ -39,12 +40,12 @@ func has_mask(mask_id) -> bool:
 func player_enter_area(area_name: String) -> void:
 	if not area_name in player_in_areas:
 		player_in_areas.append(area_name)
-	print(player_in_areas)
+		player_in_group_changed.emit()
 
 func player_leave_area(area_name: String) -> void:
 	if area_name in player_in_areas:
 		player_in_areas.erase(area_name)
-	print(player_in_areas)
+		player_in_group_changed.emit()
 
 func player_in_area(area_name: String) -> bool:
 	return player_in_areas.has(area_name)

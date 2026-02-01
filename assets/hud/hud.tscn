@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://byd8unpnnlbc8" path="res://assets/masks/MasksAnimation 3.png" id="5_g1w06"]
 [ext_resource type="Texture2D" uid="uid://bqu0p3kltwgf8" path="res://assets/masks/MasksAnimation 4.png" id="6_g1w06"]
 
-[node name="Hud" type="CanvasLayer" unique_id=1277068767 node_paths=PackedStringArray("mask_container")]
+[node name="Hud" type="CanvasLayer" unique_id=1277068767 node_paths=PackedStringArray("mask_container", "label")]
 script = ExtResource("1_ndvix")
 mask_container = NodePath("MarginContainer/HBoxMaskContainer")
+label = NodePath("Label")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1670712684]
 texture_filter = 1
@@ -68,3 +69,16 @@ texture = ExtResource("6_g1w06")
 expand_mode = 2
 stretch_mode = 4
 metadata/mask_name = "MASK_4"
+
+[node name="Label" type="Label" parent="." unique_id=1162714451]
+anchors_preset = -1
+anchor_left = 0.33600003
+anchor_top = 0.0050000004
+anchor_right = 0.59800005
+anchor_bottom = 0.059000004
+offset_left = -0.072021484
+offset_top = 6.7599998
+offset_right = 0.10394287
+offset_bottom = -5.2320023
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1

@@ -5,6 +5,9 @@ const BLUE_MASK_AREA = "blue-mask"
 func _ready():
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	if GameManager.has_mask(GameManager.MASK_2):
+		get_parent().queue_free()
+
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):

@@ -19,7 +19,7 @@ func _on_body_exited(body):
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		var keycode = event.keycode
-		if keycode == KEY_E:
+		if keycode == KEY_E or Input.is_joy_button_pressed(0, JOY_BUTTON_B):
 			if GameManager.player_in_area("green-mask"):
 				GameManager.acquire_mask(GameManager.MASK_3)
 				get_parent().queue_free()

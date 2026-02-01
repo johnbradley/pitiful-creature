@@ -15,7 +15,7 @@ func _input(event: InputEvent) -> void:
 			var mask_idx = keycode - KEY_1
 			GameManager.wear_mask(GameManager.MASK_NAMES[mask_idx])
 			#hud.update_mask_ui()
-		if keycode == KEY_E:
+		if keycode == KEY_E or Input.is_joy_button_pressed(0, JOY_BUTTON_B):
 			if GameManager.player_in_area("portal"):
 				get_tree().change_scene_to_file("res://assets/doorPuzzle/doorpuzzle.tscn")
 		# The following code is just to try out hud changes

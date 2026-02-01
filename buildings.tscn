@@ -29,22 +29,25 @@ position = Vector2(-14, 22)
 shape = SubResource("CapsuleShape2D_s1vhq")
 
 [node name="Portal" type="Sprite2D" parent="." unique_id=829045115]
+z_index = 2
 position = Vector2(1008, -12)
 scale = Vector2(4, 4)
 texture = ExtResource("1_edsdr")
 
 [node name="PortalGlow1" type="Sprite2D" parent="." unique_id=699462669]
+z_index = 2
 position = Vector2(1008, -12)
 scale = Vector2(4, 4)
 texture = ExtResource("2_g1gk6")
 
 [node name="PortalGlow2" type="Sprite2D" parent="." unique_id=543520641]
+z_index = 2
 position = Vector2(1008, -12)
 scale = Vector2(4, 4)
 texture = ExtResource("3_j34gd")
 
 [node name="RuinsFrontPassthrough" type="Sprite2D" parent="." unique_id=1384491919]
-z_index = 1
+z_index = 5
 position = Vector2(1008, 12)
 scale = Vector2(4, 4)
 texture = ExtResource("4_d45go")
@@ -55,17 +58,19 @@ scale = Vector2(4, 4)
 texture = ExtResource("5_hhf17")
 
 [node name="RuinsTopBlocksCharacter" type="Sprite2D" parent="." unique_id=606215832]
-z_index = 1
+z_index = 5
 position = Vector2(1008, 12)
 scale = Vector2(4, 4)
 texture = ExtResource("5_s1vhq")
 
 [node name="ShrineBackground" type="Sprite2D" parent="." unique_id=606427365]
+z_index = 2
 position = Vector2(1008, -12)
 scale = Vector2(4, 4)
 texture = ExtResource("6_hhf17")
 
 [node name="ShrineForeground" type="Sprite2D" parent="." unique_id=1354920390]
+z_index = 2
 position = Vector2(1008, -12)
 scale = Vector2(4, 4)
 texture = ExtResource("7_qbmpf")
@@ -93,6 +98,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("10_hhf17")
 
 [node name="MaskWhiteStand" type="Sprite2D" parent="." unique_id=1817575000]
+z_index = 2
 position = Vector2(1008, -19)
 scale = Vector2(4, 4)
 texture = ExtResource("11_qbmpf")

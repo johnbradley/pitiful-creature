@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://cisildkf8vthc"]
+
+[ext_resource type="Texture2D" uid="uid://dxg76tjyhhhiu" path="res://assets/Level02/backdrop.png" id="1_6x4tm"]
+[ext_resource type="Texture2D" uid="uid://17kapceewhuw" path="res://assets/Level02/floating rock Left .png" id="2_ymur7"]
+[ext_resource type="Texture2D" uid="uid://n2sucp3y1nh" path="res://assets/Level02/floating rock right.png" id="3_psnph"]
+[ext_resource type="Texture2D" uid="uid://boc7rj50dxmrj" path="res://assets/Level02/FloorAndSand.png" id="4_4oi8x"]
+[ext_resource type="Texture2D" uid="uid://c6vb40d41t2jq" path="res://assets/Level02/left portal illumination .png" id="5_mr1ox"]
+[ext_resource type="Texture2D" uid="uid://l4xbonxni5y3" path="res://assets/Level02/left portal illumination flicker.png" id="6_p0va1"]
+[ext_resource type="Texture2D" uid="uid://dw16vgypq75a5" path="res://assets/Level02/left portal.png" id="7_xm67a"]
+[ext_resource type="Texture2D" uid="uid://clp7akm4nbo31" path="res://assets/Level02/mask pedistal.png" id="8_8217x"]
+[ext_resource type="Script" uid="uid://due5c1b2f8uk2" path="res://white_mask.gd" id="8_ymur7"]
+[ext_resource type="Texture2D" uid="uid://d1obpdqq5esw1" path="res://assets/Level02/mask.png" id="9_i1aok"]
+[ext_resource type="Texture2D" uid="uid://ox7yu6wsh6e7" path="res://assets/Level02/New Layer 2.png" id="10_srdja"]
+[ext_resource type="Texture2D" uid="uid://iq0a3v75ui3u" path="res://assets/Level02/right portal illumination  Copy.png" id="11_i4ihl"]
+[ext_resource type="Texture2D" uid="uid://r022ptbrhm5l" path="res://assets/Level02/right portal illumination flicker Copy.png" id="12_31vei"]
+[ext_resource type="Texture2D" uid="uid://dfnvj4odbwtku" path="res://assets/Level02/right portal.png" id="13_eceko"]
+[ext_resource type="Texture2D" uid="uid://ba4br8b37h5bn" path="res://assets/Level02/sword in floating stone.png" id="14_3johj"]
+[ext_resource type="Texture2D" uid="uid://cmqplwlu8ougg" path="res://assets/Level02/sword key stone.png" id="15_l24s2"]
+[ext_resource type="Texture2D" uid="uid://jwfh7m02xon3" path="res://assets/Level02/sword key.png" id="16_a0jkl"]
+[ext_resource type="Texture2D" uid="uid://dn2n26wje1p78" path="res://assets/Level02/SwordGlowingInStone.png" id="17_3ajej"]
+[ext_resource type="Texture2D" uid="uid://dai71kvinssrs" path="res://assets/Level02/SwordRock_toFall.png" id="18_71r8q"]
+
+[node name="Buildings" type="Node2D" unique_id=1666850886]
+
+[node name="Backdrop" type="Sprite2D" parent="." unique_id=964296729]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("1_6x4tm")
+
+[node name="FloorAndSand" type="Sprite2D" parent="." unique_id=86454586]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("4_4oi8x")
+
+[node name="LeftPortalIllumination" type="Sprite2D" parent="." unique_id=404534909]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("5_mr1ox")
+
+[node name="LeftPortalIlluminationFlicker" type="Sprite2D" parent="." unique_id=1934967581]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("6_p0va1")
+
+[node name="LeftPortal" type="Sprite2D" parent="." unique_id=523617430]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("7_xm67a")
+
+[node name="MaskPedistal" type="Sprite2D" parent="." unique_id=387947801]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("8_8217x")
+
+[node name="Green Mask" type="Node2D" parent="." unique_id=814151429]
+position = Vector2(5030, 250)
+scale = Vector2(16, 16)
+
+[node name="GreenMask" type="Sprite2D" parent="Green Mask" unique_id=275729506]
+position = Vector2(-252, 4.75)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_i1aok")
+
+[node name="Area2D" type="Area2D" parent="Green Mask/GreenMask" unique_id=1433717807]
+position = Vector2(-963, -102)
+scale = Vector2(4, 4)
+script = ExtResource("8_ymur7")
+
+[node name="GreenMaskCollision" type="CollisionPolygon2D" parent="Green Mask/GreenMask/Area2D" unique_id=546301973]
+position = Vector2(161.9375, 14.625)
+scale = Vector2(0.29262602, 0.25855666)
+polygon = PackedVector2Array(183.0408, 43.752502, 180.90497, 47.861847, 183.2544, 55.35537, 187.31247, 55.113647, 190.08905, 50.03739, 188.38039, 43.994225)
+
+[node name="NewLayer2" type="Sprite2D" parent="." unique_id=643745066]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("10_srdja")
+
+[node name="RightPortalIlluminationCopy" type="Sprite2D" parent="." unique_id=939613270]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("11_i4ihl")
+
+[node name="RightPortalIlluminationFlickerCopy" type="Sprite2D" parent="." unique_id=1736032177]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("12_31vei")
+
+[node name="RightPortal" type="Sprite2D" parent="." unique_id=1974680718]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("13_eceko")
+
+[node name="SwordInFloatingStone" type="Sprite2D" parent="." unique_id=1125353553]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("14_3johj")
+
+[node name="SwordKeyStone" type="Sprite2D" parent="." unique_id=483168202]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("15_l24s2")
+
+[node name="SwordKey" type="Sprite2D" parent="." unique_id=536783065]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("16_a0jkl")
+
+[node name="SwordGlowingInStone" type="Sprite2D" parent="." unique_id=1233506]
+visible = false
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("17_3ajej")
+
+[node name="Assorted Collisions" type="StaticBody2D" parent="." unique_id=400911563]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+
+[node name="bottom stone" type="CollisionPolygon2D" parent="Assorted Collisions" unique_id=200721961]
+position = Vector2(-650.7502, -67.06763)
+scale = Vector2(4.000003, 1.5846143)
+polygon = PackedVector2Array(151.74994, 81.76604, 151.18744, 68.98691, 154.62492, 68.67137, 155.49992, 81.4505)
+
+[node name="mask cave" type="CollisionPolygon2D" parent="Assorted Collisions" unique_id=687485778]
+position = Vector2(-832.25, -331.25)
+scale = Vector2(4.4578285, 4.5358305)
+polygon = PackedVector2Array(161.56967, 77.383835, 160.84062, 69.0061, 165.875, 67.5625, 162.24265, 70.218666, 163.19603, 76.55708, 169.86969, 76.998024, 171.10347, 78.87199, 174.07578, 78.87199, 174.24402, 79.58851, 171.10347, 79.75386, 169.30887, 78.2657)
+
+[node name="StalgtightBone2D" type="Bone2D" parent="Assorted Collisions" unique_id=1299925606]
+position = Vector2(-684.50006, -433.25)
+scale = Vector2(4.4578285, 4.5358305)
+
+[node name="Stalgtight" type="CollisionPolygon2D" parent="Assorted Collisions/StalgtightBone2D" unique_id=112541394]
+polygon = PackedVector2Array(153.9375, 105.0625, 150.3125, 67.9375, 165.875, 67.5625, 160.3125, 105.9375)
+
+[node name="SwordRockleft" type="StaticBody2D" parent="." unique_id=29998075]
+
+[node name="FloatingRockLeft" type="Sprite2D" parent="SwordRockleft" unique_id=2127154296]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("2_ymur7")
+
+[node name="Sword stone2" type="CollisionPolygon2D" parent="SwordRockleft" unique_id=1235540865]
+position = Vector2(791, 92)
+scale = Vector2(4, 4)
+polygon = PackedVector2Array(133, 92.75, 129.5, 88.25, 154.75, 84.25, 156, 89.25)
+
+[node name="SwordRockMid" type="StaticBody2D" parent="." unique_id=747460074]
+
+[node name="FloatingRockRight" type="Sprite2D" parent="SwordRockMid" unique_id=1134007182]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("3_psnph")
+
+[node name="Sword stone" type="CollisionPolygon2D" parent="SwordRockMid" unique_id=1256037864]
+position = Vector2(1003, 3)
+scale = Vector2(4, 4)
+polygon = PackedVector2Array(109, 102.75, 129.75, 97.5, 133.25, 101.25, 114.75, 106.75)
+
+[node name="SwordRockRight" type="StaticBody2D" parent="." unique_id=339148585]
+
+[node name="SwordRockToFall" type="Sprite2D" parent="SwordRockRight" unique_id=1349754852]
+position = Vector2(998, 326)
+scale = Vector2(4, 4)
+texture = ExtResource("18_71r8q")
+
+[node name="Sword stone" type="CollisionPolygon2D" parent="SwordRockRight" unique_id=661665932]
+position = Vector2(1003, 3)
+scale = Vector2(4, 4)
+polygon = PackedVector2Array(148.75, 104.5, 129.5, 88.25, 159.75, 90, 198.5, 106.5, 193.75, 112.5)

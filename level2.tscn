@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bnkgel2aqcvsh"]
+
+[ext_resource type="Script" uid="uid://byjc2tlor8rnn" path="res://level_1.gd" id="1_jifot"]
+[ext_resource type="PackedScene" uid="uid://by716xgegvvog" path="res://assets/hud/hud.tscn" id="2_3opl0"]
+[ext_resource type="PackedScene" uid="uid://cisildkf8vthc" path="res://Level2Landscape.tscn" id="7_3opl0"]
+[ext_resource type="PackedScene" uid="uid://bn4mwq4t7rnim" path="res://assets/pitifulCreature/creature.tscn" id="10_hp87d"]
+
+[node name="Level2" type="Node2D" unique_id=2086817603 node_paths=PackedStringArray("hud")]
+position = Vector2(753, -26)
+script = ExtResource("1_jifot")
+hud = NodePath("Hud")
+
+[node name="Hud" parent="." unique_id=1277068767 instance=ExtResource("2_3opl0")]
+
+[node name="Ground plane" type="Node2D" parent="." unique_id=709861764]
+position = Vector2(1007, 0)
+scale = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground plane" unique_id=1320106763]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground plane/StaticBody2D" unique_id=789952604]
+position = Vector2(-156, 25)
+polygon = PackedVector2Array(184.5, 47.75, 182.5, -46.25, 205, 89.75, -315, 77.75, -304.5, -8.75, -289, 58.75, 152.5, 64.25)
+
+[node name="Level2Landscape" parent="." unique_id=1666850886 instance=ExtResource("7_3opl0")]
+position = Vector2(-842, -240)
+
+[node name="Player" parent="." unique_id=737628181 groups=["player"] instance=ExtResource("10_hp87d")]
+z_index = 2
+position = Vector2(1031, 345)

@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var animationPlayer:AnimationPlayer
 
 func _ready() -> void:
-	# $AnimationPlayer.play("player_idle")
 	animationPlayer.play("player_idle")
 	pass
 

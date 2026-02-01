@@ -24,9 +24,12 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_qtwcw"]
 resource_name = "player_idle"
 
+[sub_resource type="Animation" id="Animation_xfp1t"]
+resource_name = "player_white_walk"
+
 [sub_resource type="Animation" id="Animation_nauge"]
-resource_name = "player_walk"
-length = 2.0
+resource_name = "walk_4Legs"
+length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -35,21 +38,18 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
+"times": PackedFloat32Array(0, 0.2, 0.36666667, 0.56666666, 0.76666665, 1, 1.1333333, 1.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_xfp1t"]
-resource_name = "player_white_walk"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ycv2e"]
 _data = {
 &"RESET": SubResource("Animation_beq0j"),
 &"player_idle": SubResource("Animation_qtwcw"),
-&"player_walk": SubResource("Animation_nauge"),
-&"player_white_walk": SubResource("Animation_xfp1t")
+&"player_white_walk": SubResource("Animation_xfp1t"),
+&"walk_4Legs": SubResource("Animation_nauge")
 }
 
 [sub_resource type="Animation" id="Animation_h7l1l"]
@@ -70,9 +70,9 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_m4u8d"]
 resource_name = "idle"
 
-[sub_resource type="Animation" id="Animation_x6wvn"]
-resource_name = "walk"
-length = 2.0
+[sub_resource type="Animation" id="Animation_1sajw"]
+resource_name = "walk_ShortLegs"
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -80,7 +80,23 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 0.26666668, 0.46666667, 0.73333335, 1.0333333, 1.2666667, 1.5666667, 1.9),
+"times": PackedFloat32Array(0, 0.16666667, 0.3, 0.46666667, 0.6, 0.76666665, 0.9, 1.0666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_x6wvn"]
+resource_name = "walk_TallLegs"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.39999998, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 2, 3, 4, 5, 6, 7, 7]
@@ -90,7 +106,8 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_h7l1l"),
 &"idle": SubResource("Animation_m4u8d"),
-&"walk": SubResource("Animation_x6wvn")
+&"walk_ShortLegs": SubResource("Animation_1sajw"),
+&"walk_TallLegs": SubResource("Animation_x6wvn")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtwcw"]

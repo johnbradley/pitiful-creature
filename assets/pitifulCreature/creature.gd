@@ -68,10 +68,10 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		# Player started moving horizontally
 		velocity.x = direction * GameManager.playerStats[GameManager.current_mask_name]["speed"]
-		animationPlayer.play("player_walk")
-		animationPlayer2.play("walk")
-		animationPlayer3.play("walk")
-		animationPlayer4.play("walk")
+		animationPlayer.play("walk_4Legs")
+		animationPlayer2.play("walk_TallLegs")
+		animationPlayer3.play("walk_ShortLegs")
+		animationPlayer4.play("walk_ShortLegs")
 		
 		# Figure out which direction the sprite should face
 		if velocity.x < 0.0:

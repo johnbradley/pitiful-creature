@@ -18,28 +18,28 @@ const MASK_NAMES = [ NO_MASK, MASK_DAPPER, MASK_2, MASK_3, MASK_4 ]
 
 var playerStats = {
 	NO_MASK: {
-		"jump_velocity": -300.0,
-		"speed": 300.0,
+		"jump_velocity": -100.0,
+		"speed": 50.0,
 	},
 	# White Mask
 	MASK_DAPPER: {
-		"jump_velocity": -400.0,
-		"speed": 500.0,
+		"jump_velocity": -550.0,
+		"speed": 300.0,
 	},
 	# Blue Mask
 	MASK_2: {
-		"jump_velocity": -300.0,
-		"speed": 300.0,
+		"jump_velocity": -250.0,
+		"speed": 200.0,
 	},
 	# Green
 	MASK_3: {
-		"jump_velocity": -300.0,
-		"speed": 300.0,
+		"jump_velocity": -250.0,
+		"speed": 200.0,
 	},
 	# Yellow
 	MASK_4: {
-		"jump_velocity": -300.0,
-		"speed": 300.0,
+		"jump_velocity": -200.0,
+		"speed": 200.0,
 	},	
 }
 

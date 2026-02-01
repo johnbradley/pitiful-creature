@@ -39,11 +39,14 @@ func wear_mask(mask_id) -> void:
 		
 	elif mask_id == MASK_DAPPER:
 		playerStats["jump_velocity"] = -600.0
+	inventory_changed.emit(mask_id)
 
 func acquire_mask(mask_id) -> void:
 	masks_collected[mask_id] = true
 	wear_mask(mask_id)
+	print("Emit inventory changed")
 	inventory_changed.emit(mask_id)
+	print(masks_collected)
 
 func has_mask(mask_id) -> bool:
 	return masks_collected[mask_id]

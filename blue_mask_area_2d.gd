@@ -19,5 +19,5 @@ func _input(event: InputEvent) -> void:
 		var keycode = event.keycode
 		if keycode == KEY_E:
 			if GameManager.player_in_area("blue-mask"):
-				GameManager.acquire_mask(GameManager.MASK_DAPPER)
+				GameManager.acquire_mask(GameManager.MASK_2)
 				get_parent().queue_free()

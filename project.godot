@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://bumncmplyitcn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [global_group]
 
 player=""

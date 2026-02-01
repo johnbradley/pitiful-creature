@@ -1,13 +1,25 @@
 extends CanvasLayer
 
-@export var mask_container: Control;
-@export var label: Label
+var names: Array[String];
+var icons: Array[Sprite2D]
+var glows: Array[Sprite2D];
+var label: Label;
 
 func _ready() -> void:
 	GameManager.inventory_changed.connect(_on_inventory_changed)
 	GameManager.player_in_group_changed.connect(_on_player_in_group_changed)
+	names = [
+		GameManager.NO_MASK,
+		GameManager.MASK_DAPPER,
+		GameManager.MASK_2,
+		GameManager.MASK_3
+	]
+	icons = [$MaskNoneIcon, $MaskWhiteIcon, $MaskBlueIcon, $MaskRedIcon]
+	glows = [$MaskNoneGlow, $MaskWhiteGlow, $MaskBlueGlow, $MaskRedGlow]
+	label = $Label
 
-func _on_inventory_changed(item_name: String) -> void:
+func _on_inventory_changed(mask_id) -> void:
+	print("inventry change")
 	# If it was a mask, update the mask UI
 	update_mask_ui()
 
@@ -22,14 +34,20 @@ func update_mask_ui():
 	show_selected_mask()
 
 func show_collected_masks() -> void:
-	for child in mask_container.get_children():
-		var mask_name = child.get_meta("mask_name")
+	var idx: int = 0
+	for child in icons:
+		var mask_name = names[idx]
 		if GameManager.masks_collected[mask_name]:
 			child.visible = true
+		idx += 1
+
 
 func show_selected_mask() -> void:
-	for child in mask_container.get_children():
-		if child.get_meta("mask_name") == GameManager.current_mask_name:
-			child.modulate = Color(1.2, 1.2, 1.2)
+	var idx: int = 0
+	for child in glows:
+		var mask_name = names[idx]
+		if mask_name == GameManager.current_mask_name:
+			child.visible = true
 		else:
-			child.modulate = Color(1.0, 1.0, 1.0)
+			child.visible = false
+		idx += 1

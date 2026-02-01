@@ -2,73 +2,68 @@
 
 [ext_resource type="Script" uid="uid://0svmis2lhlmp" path="res://assets/hud/hud.gd" id="1_ndvix"]
 [ext_resource type="Texture2D" uid="uid://bo1m1rp26iqab" path="res://assets/masks/MasksAnimation 1.png" id="3_ndvix"]
+[ext_resource type="Texture2D" uid="uid://buet8me1ki64g" path="res://assets/masks/MasksAnimation1_glow.png" id="4_41ool"]
 [ext_resource type="Texture2D" uid="uid://lb330vfky7xj" path="res://assets/masks/MasksAnimation 2.png" id="4_ndvix"]
 [ext_resource type="Texture2D" uid="uid://bcgjerxbuyp2l" path="res://assets/hud/HUDBg_TopLeft.png" id="5_41ool"]
+[ext_resource type="Texture2D" uid="uid://dxqekew5vgtw8" path="res://assets/masks/MasksAnimation2_glow.png" id="5_acvcc"]
 [ext_resource type="Texture2D" uid="uid://byd8unpnnlbc8" path="res://assets/masks/MasksAnimation 3.png" id="5_g1w06"]
 [ext_resource type="Texture2D" uid="uid://bqu0p3kltwgf8" path="res://assets/masks/MasksAnimation 4.png" id="6_g1w06"]
+[ext_resource type="Texture2D" uid="uid://b384chk260k2t" path="res://assets/masks/MasksAnimation3_glow.png" id="7_cls6n"]
+[ext_resource type="Texture2D" uid="uid://b0icruqdfrkjr" path="res://assets/masks/MasksAnimation4_glow.png" id="9_hyjc1"]
 
-[node name="Hud" type="CanvasLayer" unique_id=1277068767 node_paths=PackedStringArray("mask_container", "label")]
+[node name="Hud" type="CanvasLayer" unique_id=1277068767]
 script = ExtResource("1_ndvix")
-mask_container = NodePath("MarginContainer/HBoxMaskContainer")
-label = NodePath("Label")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1670712684]
-texture_filter = 1
-offset_right = 1142.0
-offset_bottom = 655.0
+[node name="Background" type="Sprite2D" parent="." unique_id=1842134197]
+position = Vector2(578.5, 321)
+scale = Vector2(15.986111, 15.238095)
 texture = ExtResource("5_41ool")
-expand_mode = 2
-stretch_mode = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=411213128]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.13700001
-offset_top = 5.0
-offset_right = 6.0
-offset_bottom = 0.2239914
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+[node name="MaskNoneGlow" type="Sprite2D" parent="." unique_id=1485794491]
+position = Vector2(43.5, 48.75)
+scale = Vector2(3.7916667, 3.7)
+texture = ExtResource("4_41ool")
 
-[node name="HBoxMaskContainer" type="HBoxContainer" parent="MarginContainer" unique_id=289732741]
-texture_filter = 1
-layout_mode = 2
-
-[node name="MaskNone" type="TextureRect" parent="MarginContainer/HBoxMaskContainer" unique_id=2023343834]
-visible = false
-layout_mode = 2
+[node name="MaskNoneIcon" type="Sprite2D" parent="." unique_id=1183922213]
+position = Vector2(44, 49.000004)
+scale = Vector2(3.7916667, 3.7)
 texture = ExtResource("3_ndvix")
-expand_mode = 2
-stretch_mode = 4
-metadata/mask_name = "NO_MASK"
 
-[node name="MaskWhite" type="TextureRect" parent="MarginContainer/HBoxMaskContainer" unique_id=767984273]
+[node name="MaskWhiteGlow" type="Sprite2D" parent="." unique_id=494499358]
 visible = false
-layout_mode = 2
+position = Vector2(114.99999, 49.000004)
+scale = Vector2(3.7916667, 3.7)
+texture = ExtResource("5_acvcc")
+
+[node name="MaskWhiteIcon" type="Sprite2D" parent="." unique_id=970778072]
+visible = false
+position = Vector2(114.99999, 49.000004)
+scale = Vector2(3.7916667, 3.7)
 texture = ExtResource("4_ndvix")
-expand_mode = 2
-stretch_mode = 4
-metadata/mask_name = "MASK_DAPPER"
 
-[node name="MaskBlue" type="TextureRect" parent="MarginContainer/HBoxMaskContainer" unique_id=1496324078]
+[node name="MaskBlueGlow" type="Sprite2D" parent="." unique_id=1865378368]
 visible = false
-layout_mode = 2
+position = Vector2(187.50002, 49.25)
+scale = Vector2(3.7916667, 3.7)
+texture = ExtResource("7_cls6n")
+
+[node name="MaskBlueIcon" type="Sprite2D" parent="." unique_id=1733477044]
+visible = false
+position = Vector2(187.50002, 49.25)
+scale = Vector2(3.7916667, 3.7)
 texture = ExtResource("5_g1w06")
-expand_mode = 2
-stretch_mode = 4
-metadata/mask_name = "MASK_3"
 
-[node name="MaskRed" type="TextureRect" parent="MarginContainer/HBoxMaskContainer" unique_id=1382256951]
+[node name="MaskRedGlow" type="Sprite2D" parent="." unique_id=1248615865]
 visible = false
-layout_mode = 2
+position = Vector2(255.5, 48.25)
+scale = Vector2(3.7916667, 3.7)
+texture = ExtResource("9_hyjc1")
+
+[node name="MaskRedIcon" type="Sprite2D" parent="." unique_id=1556507386]
+visible = false
+position = Vector2(255.5, 48.25)
+scale = Vector2(3.7916667, 3.7)
 texture = ExtResource("6_g1w06")
-expand_mode = 2
-stretch_mode = 4
-metadata/mask_name = "MASK_4"
 
 [node name="Label" type="Label" parent="." unique_id=1162714451]
 anchors_preset = -1
@@ -77,8 +72,9 @@ anchor_top = 0.0050000004
 anchor_right = 0.59800005
 anchor_bottom = 0.059000004
 offset_left = -0.072021484
-offset_top = 6.7599998
+offset_top = 2.7599998
 offset_right = 0.10394287
-offset_bottom = -5.2320023
+offset_bottom = 1.7679977
 theme_override_font_sizes/font_size = 24
+text = "TODO"
 horizontal_alignment = 1

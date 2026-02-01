@@ -71,11 +71,6 @@ position = Vector2(161.9375, 14.625)
 scale = Vector2(0.29262602, 0.25855666)
 polygon = PackedVector2Array(183.0408, 43.752502, 180.90497, 47.861847, 183.2544, 55.35537, 187.31247, 55.113647, 190.08905, 50.03739, 188.38039, 43.994225)
 
-[node name="NewLayer2" type="Sprite2D" parent="." unique_id=643745066]
-position = Vector2(998, 326)
-scale = Vector2(4, 4)
-texture = ExtResource("10_srdja")
-
 [node name="RightPortalIlluminationCopy" type="Sprite2D" parent="." unique_id=939613270]
 position = Vector2(998, 326)
 scale = Vector2(4, 4)
@@ -135,6 +130,9 @@ polygon = PackedVector2Array(183.0408, 43.752502, 180.90497, 47.861847, 183.2544
 position = Vector2(998, 326)
 scale = Vector2(4, 4)
 
+[node name="NewLayer2" type="Sprite2D" parent="Assorted Collisions" unique_id=643745066]
+texture = ExtResource("10_srdja")
+
 [node name="bottom stone" type="CollisionPolygon2D" parent="Assorted Collisions" unique_id=200721961]
 position = Vector2(-650.7502, -67.06763)
 scale = Vector2(4.000003, 1.5846143)
@@ -145,11 +143,9 @@ position = Vector2(-832.25, -331.25)
 scale = Vector2(4.4578285, 4.5358305)
 polygon = PackedVector2Array(161.56967, 77.383835, 160.84062, 69.0061, 165.875, 67.5625, 162.24265, 70.218666, 163.19603, 76.55708, 169.86969, 76.998024, 171.10347, 78.87199, 174.07578, 78.87199, 174.24402, 79.58851, 171.10347, 79.75386, 169.30887, 78.2657)
 
-[node name="StalgtightBone2D" type="Bone2D" parent="Assorted Collisions" unique_id=1299925606]
+[node name="Stalgtight" type="CollisionPolygon2D" parent="Assorted Collisions" unique_id=112541394]
 position = Vector2(-684.50006, -433.25)
 scale = Vector2(4.4578285, 4.5358305)
-
-[node name="Stalgtight" type="CollisionPolygon2D" parent="Assorted Collisions/StalgtightBone2D" unique_id=112541394]
 polygon = PackedVector2Array(153.9375, 105.0625, 150.3125, 67.9375, 165.875, 67.5625, 160.3125, 105.9375)
 
 [node name="SwordRockleft" type="StaticBody2D" parent="." unique_id=29998075]

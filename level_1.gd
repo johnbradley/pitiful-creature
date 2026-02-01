@@ -2,6 +2,8 @@ extends Node2D
 
 @export var hud: CanvasLayer;
 
+@export var next_scene: String = "res://level2.tscn"
+
 func _ready() -> void:
 	hud.update_mask_ui()
 
@@ -26,3 +28,6 @@ func _input(event: InputEvent) -> void:
 			GameManager.acquire_mask(GameManager.MASK_3)
 			#hud.update_mask_ui()
 		# The following code is just to try out hud changes     
+
+		if keycode == KEY_P:
+			get_tree().change_scene_to_file(next_scene)

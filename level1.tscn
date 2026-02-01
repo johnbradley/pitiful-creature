@@ -56,15 +56,11 @@ texture = ExtResource("1_ootpb")
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=1320106763]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=789952604]
-polygon = PackedVector2Array(28.75, 57, 69, 68.5, 82.25, 71.5, 149, 74.75, 174.75, 65.25, 193.5, 64, 194, 49.25, 193.75, 14.5, 247.75, 40, 248.5, 107, -252.5, 107.75, -252.75, 19.5, -212.25, 15.25, -212.75, 59.75, -201.75, 71, -181.75, 73, -113, 83, -61, 82.5, 11, 57.5)
+polygon = PackedVector2Array(28.75, 57, 69, 68.5, 82.25, 71.5, 149, 74.75, 173.5, 63.25, 192.25, 61.5, 194, 49.25, 193.75, 14.5, 247.75, 40, 248.5, 107, -252.5, 107.75, -252.75, 19.5, -212.25, 15.25, -212.75, 59.75, -201.75, 71, -181.75, 73, -113, 83, -61, 82.5, 11, 57.5)
 
 [node name="BuildingNode" type="Node2D" parent="." unique_id=1840637102]
 
 [node name="Buildings" parent="BuildingNode" unique_id=1666850886 instance=ExtResource("3_5j5gb")]
-
-[node name="Player" parent="." unique_id=737628181 groups=["player"] instance=ExtResource("9_usj0q")]
-z_index = 2
-position = Vector2(614, 344)
 
 [node name="White Mask" type="Node2D" parent="." unique_id=1525597463]
 position = Vector2(1008, -19)
@@ -81,3 +77,7 @@ script = ExtResource("10_5j5gb")
 position = Vector2(69.69925, 20.086107)
 scale = Vector2(0.61651146, 0.6404473)
 polygon = PackedVector2Array(178, 44, 178, 46.199997, 175.20001, 49, 172.1, 49, 176, 59.399994, 176, 61.800003, 179.20001, 65, 186.20001, 65, 190.1, 58, 192, 58, 192, 50, 187, 46, 187, 44)
+
+[node name="Player" parent="." unique_id=737628181 groups=["player"] instance=ExtResource("9_usj0q")]
+z_index = 2
+position = Vector2(273, 321)
